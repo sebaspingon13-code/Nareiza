@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti corazón</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        skyLight: '#e0f2fe',
+                        skySoft: '#bae6fd',
+                        skyMain: '#38bdf8',
+                        mintLight: '#ecfdf5',
+                        mintSoft: '#a7f3d0',
+                        mintMain: '#34d399',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #f0f9ff 50%, #e0f2fe 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .romantic-title {
+            font-family: 'Playfair Display', serif;
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        .animate-float {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+            animation: floatSlow 8s ease-in-out 2s infinite;
+        }
+        /* Glassmorphism card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body class="text-slate-700 relative flex flex-col items-center justify-between min-h-screen p-4 sm:p-6 md:p-10">
+
+    <div class="absolute top-10 left-10 text-sky-300 opacity-60 text-3xl animate-float pointer-events-none">
+        <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="absolute top-20 right-16 text-emerald-300 opacity-60 text-2xl animate-float-delayed pointer-events-none">
+        <i class="fa-solid fa-star"></i>
+    </div>
+    <div class="absolute bottom-12 left-20 text-emerald-300 opacity-50 text-4xl animate-float pointer-events-none">
+        <i class="fa-solid fa-seedling"></i>
+    </div>
+    <div class="absolute bottom-24 right-12 text-sky-300 opacity-50 text-3xl animate-float-delayed pointer-events-none">
+        <i class="fa-solid fa-cloud"></i>
+    </div>
+
+    <header class="text-center z-10 max-w-xl mx-auto mt-6 mb-4">
+        <div class="inline-block p-3 bg-sky-100 text-sky-600 rounded-full mb-3 shadow-sm animate-bounce">
+            <i class="fa-solid fa-dove text-2xl"></i>
+        </div>
+        <h1 class="romantic-title text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 tracking-wide mb-2">
+            Nareizaaa, <span class="text-sky-500">perdóname!!</span>
+        </h1>
+        <p class="text-sm sm:text-base text-slate-500 italic">
+           por mi culpa ayer te incomodaste con la anto
+        </p>
+    </header>
+
+    <main class="w-full max-w-2xl mx-auto z-10 my-4">
+        <div class="glass-card shadow-xl rounded-3xl p-6 sm:p-10 transition-all duration-300 relative overflow-hidden">
+            <!-- Accent top border gradient -->
+            <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-sky-400 via-mintMain to-sky-300"></div>
+
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <span class="text-xs font-semibold tracking-wider uppercase text-sky-600 bg-sky-50 px-3 py-1 rounded-full">
+                        <i class="fa-regular fa-envelope mr-1"></i> mensaje : sebas
+                    </span>
+                    <span class="text-xs text-slate-400">fecha : 07/10/2026</span>
+                </div>
+
+                <div class="romantic-title text-xl sm:text-2xl text-slate-800 font-medium leading-relaxed">
+                    "Sé que a veces mis palabras o acciones no son las correctas, y me duele pensar que pude haberte causado incomodidad por algo tan simple como darle like a una historia de instragram..."
+                </div>
+
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    Te escribo esto porque eres lo que más valioso en mi vida.  La paz que me das , El celeste del cielo y la frescura del verde claro me recuerdan lo hermoso, tranquilo y luminoso que es tenerte en mi vida. No hay nada que desee más que tu perdón.
+                </p>
+
+                <!-- Interactive surprise box -->
+                <div class="pt-2">
+                    <button onclick="toggleSurprise()" id="surpriseBtn" class="w-full py-3 px-6 bg-gradient-to-r from-sky-400 to-mintMain text-white font-medium rounded-2xl shadow-md hover:opacity-95 transition transform active:scale-95 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-gift"></i>
+                        <span>Toca para ver mi promesa</span>
+                    </button>
+
+                    <div id="surpriseContent" class="hidden mt-4 p-5 bg-gradient-to-br from-sky-50 to-emerald-50 rounded-2xl border border-sky-100 text-center animate-fadeIn">
+                        <p class="text-sky-800 font-medium text-sm sm:text-base italic">
+                            ✨ "Prometo no hacer ningun contacto con tus conocidos y escucharte más, cuidar cada detalle de lo nuestro y hacerte sonreír mas a menudo con mis babosadas. Eres mi prioridad y mi mayor inspiración. (te amo)" ✨
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="w-full max-w-md mx-auto text-center z-10 mt-6 mb-4 space-y-4">
+        <p class="text-xs sm:text-sm text-slate-500 font-medium">¿Me das la oportunidad de enmendarlo?</p>
+        
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <button onclick="handleResponse('yes')" class="flex-1 py-3 px-6 bg-mintMain text-white font-semibold rounded-2xl shadow hover:bg-emerald-400 transition flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-heart"></i>
+                <span>Sí, te perdono</span>
+            </button>
+            <button onclick="handleResponse('talk')" class="flex-1 py-3 px-6 bg-white text-sky-600 border border-sky-200 font-semibold rounded-2xl shadow-sm hover:bg-sky-50 transition flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-comments"></i>
+                <span>ok</span>
+            </button>
+        </div>
+
+        <!-- Custom message feedback box -->
+        <div id="responseMessage" class="hidden p-4 rounded-2xl bg-white/90 shadow-md text-sky-700 font-medium text-sm transition-all duration-300"></div>
+
+        <p class="text-xs text-slate-400 pt-4">te amo wawa , por cierto ya puedo hacer mejores paginas web muejeje.</p>
+    </footer>
+
+    <script>
+        function toggleSurprise() {
+            const content = document.getElementById('surpriseContent');
+            const btn = document.getElementById('surpriseBtn');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                btn.innerHTML = '<i class="fa-solid fa-gift"><span>Ocultar promesa</span></i>';
+                btn.classList.replace('from-sky-400', 'from-emerald-400');
+                btn.classList.replace('to-mintMain', 'to-sky-400');
+            } else {
+                content.classList.add('hidden');
+                btn.innerHTML = '<i class="fa-solid fa-gift"><span>Toca para ver mi promesa</span></i>';
+                btn.classList.replace('from-emerald-400', 'from-sky-400');
+                btn.classList.replace('to-sky-400', 'to-mintMain');
+            }
+        }
+
+        function handleResponse(type) {
+            const msgBox = document.getElementById('responseMessage');
+            msgBox.classList.remove('hidden');
+            if (type === 'yes') {
+                msgBox.innerHTML = "💖 ¡gracias mi amoooooor , Prometo no cagarla y hacerte muy feliz. mi niña hermosa";
+                msgBox.className = "p-4 rounded-2xl bg-mintLight text-emerald-800 border border-mintSoft font-medium text-sm shadow-md animate-bounce";
+            } else {
+                msgBox.innerHTML = "☕ esta bien lo entiendo ntp , igual es entendible pero estare aqui ;c";
+                msgBox.className = "p-4 rounded-2xl bg-skyLight text-sky-800 border border-skySoft font-medium text-sm shadow-md";
+            }
+        }
+    </script>
+</body>
+</html>
